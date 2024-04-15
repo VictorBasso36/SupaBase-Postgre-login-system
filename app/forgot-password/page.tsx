@@ -27,7 +27,7 @@ export default async function ForgotPassword({
     const supabase = createClient();
 
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `https://supa-base-postgre-login-system.vercel.app/reset-password`,
+      redirectTo: `${origin}/reset-password`,
     });
 
     if (error) {
